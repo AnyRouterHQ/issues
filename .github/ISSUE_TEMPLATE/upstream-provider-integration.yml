@@ -1,0 +1,146 @@
+name: Upstream provider integration
+description: Request integration of a new upstream provider or provider API with AnyRouter.
+title: "[Provider]: <provider name>"
+labels: ["provider-integration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request a new upstream/provider integration.
+        Please provide accurate, verifiable information so we can review compatibility, routing, and model coverage.
+        Do not include API keys, provider keys, tokens, or other secrets.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for this provider or integration request.
+          required: true
+        - label: I included a public model listing/catalog page for verification.
+          required: true
+        - label: I removed secrets and private credentials from this request.
+          required: true
+
+  - type: input
+    id: provider-name
+    attributes:
+      label: Provider name
+      description: Official provider or platform name.
+      placeholder: Example Provider
+    validations:
+      required: true
+
+  - type: input
+    id: provider-website
+    attributes:
+      label: Provider website
+      description: Official homepage or product page.
+      placeholder: https://provider.example
+    validations:
+      required: true
+
+  - type: textarea
+    id: provider-description
+    attributes:
+      label: Provider description
+      description: Briefly describe the provider, its API, and why it should be integrated with AnyRouter.
+      placeholder: What does this provider offer, and who is it for?
+    validations:
+      required: true
+
+  - type: input
+    id: provider-logo
+    attributes:
+      label: Logo URL or SVG
+      description: Link to a public logo asset (SVG preferred). AnyRouter needs a resolvable logo for provider/model display.
+      placeholder: https://provider.example/logo.svg
+    validations:
+      required: true
+
+  - type: input
+    id: base-url
+    attributes:
+      label: API base URL
+      description: Base URL for API requests.
+      placeholder: https://api.provider.example/v1
+    validations:
+      required: true
+
+  - type: input
+    id: model-listing-page
+    attributes:
+      label: Model listing / catalog page
+      description: Public page that lists available models and IDs. This must match the models requested below.
+      placeholder: https://provider.example/models
+    validations:
+      required: true
+
+  - type: textarea
+    id: requested-models
+    attributes:
+      label: Requested models
+      description: List model IDs/names you want integrated, exactly as shown by the provider when possible.
+      placeholder: |
+        - provider/model-id-1
+        - provider/model-id-2
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: api-compatibility
+    attributes:
+      label: API compatibility
+      description: Select the API surfaces the provider supports.
+      options:
+        - label: OpenAI-compatible Chat Completions API (`/chat/completions` or equivalent)
+        - label: Anthropic-compatible Messages API (`/messages` or equivalent)
+        - label: OpenAI-compatible Responses API (`/responses` or equivalent)
+        - label: Embeddings API
+        - label: Decision / System One API
+        - label: Other (describe below)
+
+  - type: textarea
+    id: api-details
+    attributes:
+      label: API endpoint and compatibility details
+      description: Provide endpoint paths, request/response format notes, and documentation links for each supported API.
+      placeholder: |
+        - OpenAI-compatible chat: https://... (path, docs)
+        - Anthropic-compatible messages (optional): https://...
+        - Responses API (optional): https://...
+        - Embeddings (optional): https://...
+        - Decision / System One API (optional): https://...
+        - Other:
+    validations:
+      required: true
+
+  - type: textarea
+    id: authentication
+    attributes:
+      label: Authentication method
+      description: How are requests authenticated? Include header/key format if documented (do not include actual keys).
+      placeholder: Bearer token, x-api-key, OAuth, custom header, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: pricing-terms
+    attributes:
+      label: Pricing, limits, and terms
+      description: Share pricing page, rate limits, free tier details, regional restrictions, or terms that affect integration.
+      placeholder: Pricing page, quotas, availability notes, terms links...
+
+  - type: textarea
+    id: integration-notes
+    attributes:
+      label: Additional integration notes
+      description: Anything else useful for verification or integration (SDK links, sample requests, special headers, streaming behavior, etc.).
+      render: text
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Your use case
+      description: Why do you need this provider integrated with AnyRouter?
+      placeholder: What are you building, and which models/endpoints matter most?

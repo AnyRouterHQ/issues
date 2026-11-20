@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AnyRouter Documentation
+    url: https://anyrouter.dev/docs
+    about: Read setup guides, API reference, and feature documentation.
+  - name: Service Status
+    url: https://status.anyrouter.dev
+    about: Check for active incidents or provider outages before reporting a bug.
+  - name: Account, billing, or security issue
+    url: mailto:support@anyrouter.dev
+    about: Contact support directly for account-specific, billing, or security-sensitive matters. Do not post secrets or personal data publicly.

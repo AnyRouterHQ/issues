@@ -1,0 +1,120 @@
+name: Bug report
+description: Report a problem with the AnyRouter API, dashboard, docs, CLI, or website.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please include enough detail for us to reproduce the issue.
+        Do not include API keys, provider keys, tokens, passwords, or personal data.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for duplicates.
+          required: true
+        - label: I checked https://status.anyrouter.dev for active incidents.
+          required: true
+        - label: I removed secrets and personal data from this report.
+          required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Where did you encounter the problem?
+      options:
+        - API / inference
+        - Dashboard
+        - Billing / credits
+        - Models / routing
+        - Docs / website
+        - CLI
+        - MCP / integrations
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Bug summary
+      description: A clear and concise description of what went wrong.
+      placeholder: What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide the exact steps, request details, or page flow needed to reproduce the issue.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened? Include error messages or status codes if available.
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: Model ID (if applicable)
+      description: Example: openai/gpt-5.4-mini or anthropic/claude-sonnet-4-6
+      placeholder: provider/model
+
+  - type: input
+    id: endpoint
+    attributes:
+      label: Endpoint or page (if applicable)
+      description: Example: /api/v1/chat/completions, /dashboard/keys, https://anyrouter.dev/models
+      placeholder: /api/v1/...
+
+  - type: input
+    id: request-id
+    attributes:
+      label: Request ID / timestamp (if applicable)
+      description: Include a request ID, approximate timestamp, and timezone if the issue involves an API request.
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Client, SDK, language, CLI version, browser, or operating system details.
+      placeholder: |
+        - Client/SDK:
+        - Version:
+        - OS/Browser:
+        - Region (optional):
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or response snippets
+      description: Paste sanitized error responses or logs. Redact secrets and personal data.
+      render: text
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Screenshots, links, or anything else that helps us investigate.

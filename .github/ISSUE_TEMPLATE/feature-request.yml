@@ -1,0 +1,80 @@
+name: Feature request
+description: Suggest a new feature or improvement for AnyRouter.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share your idea and the problem it solves. The more context you provide, the easier it is to evaluate and prioritize.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for similar requests.
+          required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of AnyRouter would this improve?
+      options:
+        - API / inference
+        - Models / routing
+        - Upstream/provider experience
+        - Dashboard
+        - Billing / credits
+        - Docs / website
+        - CLI
+        - MCP / integrations
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What problem are you trying to solve? Who is affected?
+      placeholder: Describe the need or pain point.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you like AnyRouter to add or change?
+      placeholder: Describe the feature, behavior, or improvement.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds
+      description: Have you tried other approaches? What is missing today?
+      placeholder: Current workaround, other tools, or alternative designs.
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Why is this important? How often would it help, and what would it unlock?
+      placeholder: Frequency, users affected, business/developer impact, etc.
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or references
+      description: Links, API examples, screenshots, or similar implementations.
+      render: text
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else we should know.
